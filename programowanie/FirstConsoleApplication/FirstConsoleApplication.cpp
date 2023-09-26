@@ -19,6 +19,10 @@ void task1()
 	cin >> FirstNumber;
 	cout << "insert Second number:\n";
 	cin >> SecondNumber;
+
+	double AverageofgivenNumbers = (FirstNumber + SecondNumber) / 2;
+
+	cout << "The average equals:" << AverageofgivenNumbers << "\n";
 }
 
 int main()
