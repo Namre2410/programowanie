@@ -46,8 +46,7 @@ Operatory porównania:
 4.
 5.
 6.
-7. Program wyświetlający odpowiedni komunikat w zależności od podanej temperatury 
-(np. "ciepło" dla temperatury powyżej 20 stopni Celsjusza, "chłodno" dla temperatury poniżej 10 stopni Celsjusza itd.)
+7.
 */
 
 //Program sprawdzający czy podana liczba jest parzysta czy nieparzysta
