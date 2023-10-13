@@ -1,4 +1,4 @@
-﻿/*
+/*
 1. Program obliczający średnią artmetyczną 2 liczb
 2. Program obliczający pole prostokąta.
 3. Program obliczający objętość stożka.
@@ -47,16 +47,19 @@ Operatory porównania:
 5.
 6.
 7.
+8.
+9. Program sprawdzający czy osoba jest pełnoletnia.
+10. Program, który sprawdzi czy z podanych długości boków można zrobić trójkąt.
 */
 
 //Program sprawdzający czy podana liczba jest parzysta czy nieparzysta
 
 void task1()
 {
-	int a;
+	int number;
 	cout << "insert number:\n";
-	cin >> a;
-	if (a%2==0)
+	cin >> number;
+	if (number%2==0)
 	{
 		cout << "the number is even \n";
 	}
@@ -71,20 +74,20 @@ void task1()
 
 void task2()
 {
-	int a;
+	int number;
 	cout << "insert number:\n";
-	cin >> a;
-	if(a > 0)
+	cin >> number;
+	if(number > 0)
 	{
 		cout << "the number is positive \n";
 	}
 
-	else if(a < 0)
+	else if(number < 0)
 	{
 		cout << "the number is negative \n";
 	}
 
-	else if(a == 0)
+	else if(number == 0)
 	{
 		cout << "the number is zero \n";
 	}
@@ -95,10 +98,10 @@ void task2()
 
 void task3()
 {
-	int a;
+	int year;
 	cout << "insert year:\n";
-	cin >> a;
-	if(a%4==0)
+	cin >> year;
+	if(year%4==0)
 	{ 
 		cout << "the year is a leap year \n";
 	}
@@ -112,30 +115,30 @@ void task3()
 
 void task4()
 {
-	int a;
+	int mark;
 	cout << "insert mark:\n";
-	cin >> a;
-	if (a == 6)
+	cin >> mark;
+	if (mark == 6)
 	{
 		cout << "celujący \n";
 	}
-	else if (a == 5)
+	else if (mark == 5)
 	{
 		cout << "bardzo dobry \n";
 	}
-	else if (a == 4)
+	else if (mark == 4)
 	{
 		cout << "dobry \n";
 	}
-	else if (a == 3)
+	else if (mark == 3)
 	{
 		cout << "dostateczny \n";
 	}
-	else if (a == 2)
+	else if (mark == 2)
 	{
 		cout << "dopuszczający \n";
 	}
-	else if (a == 1)
+	else if (mark == 1)
 	{
 		cout << "niedostateczny \n";
 	}
@@ -149,10 +152,10 @@ void task4()
 
 void task5()
 {
-	int a;
+	int password;
 	cout << "insert password:\n";
-	cin >> a;
-	if (a == 5462)
+	cin >> password;
+	if (password == 5462)
 	{
 		cout << "the password is correct \n";
 	}
@@ -166,22 +169,41 @@ void task5()
 
 void task6()
 {
-	double a, b;
+	int day, month, year;
 	cout << "insert day: \n";
-	cin >> a;
+	cin >> day;
 	cout << "insert month: \n";
-	cin >> b;
-	if (0 < a < 32, 0 < b < 13)
+	cin >> month;
+	cout << "insert year: \n";
+	cin >> year;
+
+	bool isLeapYear = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+
+	if (day < 1
+		|| day > 31
+
+		|| month < 1
+		|| month > 12
+
+		|| (day == 31
+			&& (month == 4
+				|| month == 6
+				|| month == 9
+				|| month == 11))
+
+		|| (month == 2
+			&& day > 29)
+
+		|| (month == 2
+			&& day == 29
+			&& !isLeapYear)
+		)
+	
+		{
+		cout << "the date doesnt exist\n";
+		}
 	{
-		cout << "poprawna data \n";
-	}
-	else if (a == 0, b == 0)
-	{
-		cout << "niepoprawna data \n";
-	}
-	else if (a > 31, b > 12)
-	{
-		cout << "niepoprawna data \n";
+		cout << "the date exists\n";
 	}
 }
 
@@ -189,10 +211,10 @@ void task6()
 
 void task7()
 {
-	int a;
+	int temperature;
 	cout << "insert temerature in celsius:\n";
-	cin >> a;
-	if (a >= 20)
+	cin >> temperature;
+	if (temperature >= 20)
 	{
 		cout << "warm \n";
 	}
@@ -202,9 +224,29 @@ void task7()
 	}
 }
 
+ //Program sprawdzjący czy podana liczba jest z przediału < 1; 15)
+
+void task8()
+{
+	int number;
+	cout << "insert number:\n";
+	cin >> number;
+	if (0 < number < 15)
+	{
+		cout << "liczba jest w przedziale <1 ; 15) \n";
+	}
+	else
+	{
+		cout << "liczba nie jest w przedziale <1 ; 15) \n";
+	}
+}
+
 int main()
 {
-	task6();
+	task8();
+
+	return 0;
+}
 
 	return 0;
 }
