@@ -40,16 +40,8 @@ Operatory porównania:
 */
 
 /*
-1.
-2.
-3. 
-4.
-5.
-6.
-7.
-8.
-9. Program sprawdzający czy osoba jest pełnoletnia.
-10. Program, który sprawdzi czy z podanych długości boków można zrobić trójkąt.
+12. Napisz program, który wczyta numer miesiąca i wyświetli jego słowny odpowiednik.
+13. Napisz program, który na podstawie współczynników równania kwadratowego(a, b, c) sprawdzi, czy to równanie ma rozwiązania rzeczywiste, i jeśli tak, to je obliczy.
 */
 
 //Program sprawdzający czy podana liczba jest parzysta czy nieparzysta
@@ -231,7 +223,8 @@ void task8()
 	int number;
 	cout << "insert number:\n";
 	cin >> number;
-	if (0 < number < 15)
+	if (number > 0
+		&& number < 15)
 	{
 		cout << "liczba jest w przedziale <1 ; 15) \n";
 	}
@@ -241,12 +234,53 @@ void task8()
 	}
 }
 
+// Program sprawdzający czy osoba jest pełnoletnia.
+
+void task9()
+{
+	int age;
+	cout << "insert the persons age:\n";
+	cin >> age;
+	if (age >= 18)
+	{
+		cout << "the person is an adult \n";
+	}
+	else
+	{
+		cout << "the person is not an adult \n";
+	}
+}
+
+//Program, który sprawdzi czy z podanych długości boków można zrobić trójkąt.
+
+void task10()
+{
+	int side1, side2, side3;
+	cout << "insert the traingles lengths:\n";
+	cin >> side1;
+	cin >> side2;
+	cin >> side3;
+
+	if (side1 + side2 > side3)
+	{
+		cout << "you can build a triangle from those lengths \n";
+	}
+	else
+	{
+		cout << "you cant build a triangle from those lengths \n";
+	}
+}
+
+//Napisz program, który będzie działać jako prosty kalkulator matematyczny, 
+// umożliwiając użytkownikowi wybór operacji(dodawanie, odejmowanie, mnożenie, dzielenie) i wprowadzanie liczb do obliczeń.
+
+void task11()
+{
+
+}
 int main()
 {
-	task8();
-
-	return 0;
-}
+	task11();
 
 	return 0;
 }
