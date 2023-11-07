@@ -61,12 +61,14 @@ void task2()
 		a = tmp;
 	}
 
-	/*for (; b != 0; )
+	/*
+	for (; b != 0; )
 	{
 		int tmp = b;
 		b = a % b;
 		a = tmp;
-	}*/
+	}
+	*/
 
 	cout << "NWD = " << a << "\n";
 }
@@ -87,11 +89,13 @@ void task3()
 	}
 	cout << "\n";
 
-	/*for (int i = 0; number > i; i++)
+	/*
+	for (int i = 0; number > i; i++)
 	{
 		cout << (i + 1) << ", ";
 	}
-	cout << "\n"; */
+	cout << "\n"; 
+	*/
 }
 
 //Napisz program, który wylosuje liczbę a uzytkownik ma zgodnąć ją.
@@ -131,7 +135,7 @@ void task5()
 		i++;
 	}
 
-	cout << "The sum from 1 to 100 is: " << sum << "\n"; 
+	cout << "The sum from 1 to 100 is: " << sum << "\n";
 	*/
 }
 
@@ -162,7 +166,7 @@ void task7()
 	for (int i = 0; i <= 100; i++)
 	{
 		if (i % 3 == 0)
-		cout << i << ",";
+			cout << i << ",";
 	}
 
 }
@@ -184,14 +188,14 @@ void task8()
 
 void task9()
 {
-	std::cout << "0 , 1, ";
+	cout << "0 , 1, ";
 
 	int fib2 = 0;
 	int fib1 = 1;
 	for (int i = 0; i < 18; i++)
 	{
 		int fib = fib2 + fib1;
-		std::cout << fib << ", ";
+		cout << fib << ", ";
 		fib2 = fib1;
 		fib1 = fib;
 	}
