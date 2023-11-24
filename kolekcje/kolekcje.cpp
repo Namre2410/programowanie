@@ -109,8 +109,18 @@ void task5()
 // Napisz program, który będzie prosił o hasło. Nie przepuści dalej dopóki nie zostanie ono podane prawidłowo.
 void task()
 {
-
-
+    string TextFromUser;
+    cout << "insert password\n";
+    cin >> TextFromUser;
+    
+    if (TextFromUser == 'password')
+    {
+        cout << "the passoword is correct\n";
+    }
+    else
+    {
+        cout << "the passoword is incorrect\n";
+    }
 }
 
 int main()
