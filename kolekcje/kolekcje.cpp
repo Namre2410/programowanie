@@ -107,13 +107,13 @@ void task5()
 }
 
 // Napisz program, który będzie prosił o hasło. Nie przepuści dalej dopóki nie zostanie ono podane prawidłowo.
-void task()
+void task6()
 {
     string TextFromUser;
     cout << "insert password\n";
     cin >> TextFromUser;
     
-    if (TextFromUser == 'password')
+    if (TextFromUser == "password")
     {
         cout << "the passoword is correct\n";
     }
@@ -122,6 +122,32 @@ void task()
         cout << "the passoword is incorrect\n";
     }
 }
+
+// Napisz program, który pobiera od użytkownika ciąg znaków i wyświetla liczbę samogłosek i spółgłosek w tym ciągu.
+void task7()
+{
+    string textFromUser;
+    cout << "insert text\n";
+    cin >> textFromUser;
+
+    int counterV = 0, counterC = 0;
+    for (int i = 0; i < textFromUser.length(); i++)
+    {
+        if (textFromUser[i] == 'a', 'o', 'u', 'y', 'e')
+        {
+            counterV++;
+        }
+        else if (textFromUser[i] == 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't','v', 'w', 'x', 'z')
+        {
+            counterC++;
+        }
+    }   
+
+    cout << "the number of vowels equals: " << counterV << "\n";
+    cout << "the number of consonants equals: " << counterC << "\n";
+
+}
+
 
 int main()
 {
