@@ -2,7 +2,6 @@
 using namespace std;
 
 /*
-* Napisz program, który pobiera od użytkownika ciąg znaków i wyświetla liczbę samogłosek i spółgłosek w tym ciągu.
 * Poproś użytkownika o wprowadzenie liczby całkowitej w systemie dziesiętnym. Następnie skonwertuj tę liczbę na system dwójkowy (binarny) i wyświetl wynik.
 * Program sprawdzający czy podany ciąg znaków jest palindromem (czyli takim, który czytany od tyłu jest taki sam, jak czytany od przodu, np. "kajak")
 * Program sprawdzający czy podane dwa słowa są anagramami (czyli takimi, które zawierają te same litery, ale w innym układzie, np. "klasa" i "salka")
@@ -32,12 +31,6 @@ void task1()
 	{
 		cout << "the sign is not a small letter of the alphabet\n";
 	}
-
-	SignFromUser - SignFromUser + 2;
-	cout << "you inserted a sign" << SignFromUser << "\n";
-
-	SignFromUser - 'a' + 2;
-	cout << "you inserted a sign" << SignFromUser << "\n";
 }
 
 void task2()
@@ -148,8 +141,26 @@ void task7()
 
 }
 
+void task8()
+{
+    const int UPPER_RANGE = 10;
+    const int LOWER_RANGE = 5;
 
+    const int SIZE_OF_ARRAY = 5;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+    }
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+        cout << numbers[i] << ", ";
+    cout << "\n";
+}
 int main()
 {
-	task5();
+	task8();
 }
