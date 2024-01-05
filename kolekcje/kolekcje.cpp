@@ -160,7 +160,71 @@ void task8()
         cout << numbers[i] << ", ";
     cout << "\n";
 }
+
+// napisz obliczajacy srednia arytmetyczna elementow w tablicy liczb calkowitych
+void task9()
+{
+    const int UPPER_RANGE = 10;
+    const int LOWER_RANGE = 5;
+
+    const int SIZE_OF_ARRAY = 5;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+    }
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+        cout << numbers[i] << ", ";
+    cout << "\n";
+
+    int sum = 0;
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        sum = sum + numbers[i];
+    }
+
+    double average = sum + 1.0 / SIZE_OF_ARRAY;
+    cout << "the average of the number is: " << average << "\n";
+
+}
+
+//napisz program ktory zlicza ilosc wystapien danych w tablicy
+void task10()
+{
+    const int UPPER_RANGE = 10;
+    const int LOWER_RANGE = 5;
+
+    const int SIZE_OF_ARRAY = 5;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+    }
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+        cout << numbers[i] << ", ";
+    cout << "\n";
+
+    // wersja 1
+    for (int NumbersFromRange = LOWER_RANGE; NumbersFromRange <= UPPER_RANGE; NumbersFromRange++)
+    {
+        int numberOfOccourrences = 0;
+        for (int j = 0; j < SIZE_OF_ARRAY; j++)
+        {
+            if (numbers[j] == NumbersFromRange)
+                numberOfOccourrences++;
+        }
+        cout << "liczba " << NumbersFromRange << " wystapila " << numberOfOccourrences << "\n";
+    }
+}
 int main()
 {
-	task8();
+	task10();
 }
