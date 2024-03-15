@@ -1,6 +1,28 @@
 #include <iostream>
 using namespace std;
 
+/*
+Zdefiniuj klase opisującą prostokąt. Możliwości klasy:
+* konstruktory
+* metoda która zwórci obwód prostokąta
+* metoda która pole prostokąta
+* metodę która pokaże informacje o prostokącie.
+
+Napisz program który zaprezentuje możliwości obiektu na podstawie tej klasy.
+*/
+
+/*
+ZADANIE
+Zdefiniuj klase opisujące konto bankowe. Możliwości klasy:
+* konstruktory
+* metoda która dokona wpłaty na konto
+* metoda która wypłaty z konta
+* metoda która wykona przelew na inne konto
+* metodę która pokaże informacje o koncie.
+
+Napisz program który zaprezentuje możliwości obiektu na podstawie tej klasy.
+*/
+
 class Point
 {
 private:
@@ -30,6 +52,19 @@ public:
 		z = zz;
 	}
 
+	//konstrukctor kopiujący
+	Point(Point& p)
+	{
+		x = p.x;
+		y = p.y;
+		z = p.z;
+	}
+
+	~Point()
+	{
+		cout << "Teraz działa destruktor\n";
+	}
+
 	void SetX(int value)
 	{
 		//x = abs(value);
@@ -56,19 +91,85 @@ public:
 	}
 };
 
-
-
-int main()
+void task1()
 {
-	Point firstPoint;
-	//firstPoint.x = 3;
-	firstPoint.SetX(-3);
-	//firstPoint.y = 5;
-	//firstPoint.z = 8;
-	cout << "Odległość " << firstPoint.DistanceFromCenter() << "\n";
+	{
+		Point firstPoint;
+		//firstPoint.x = 3;
+		firstPoint.SetX(-3);
+		//firstPoint.y = 5;
+		//firstPoint.z = 8;
+		cout << "Odległość " << firstPoint.DistanceFromCenter() << "\n";
+	}
 
 	Point secondPiont(15);
 	cout << "Odległość " << secondPiont.DistanceFromCenter() << "\n";
 
+	Point thirdPoint(secondPiont);
+	cout << "Odległość " << thirdPoint.DistanceFromCenter() << "\n";
+}
 
+/*
+Zdefiniuj klase opisującą prostokąt. Możliwości klasy:
+* konstruktory
+* metoda która zwórci obwód prostokąta
+* metoda która pole prostokąta
+* metodę która pokaże informacje o prostokącie.
+
+Napisz program który zaprezentuje możliwości obiektu na podstawie tej klasy.
+*/
+
+class Rectangle {
+
+private:
+	int sideA;
+	int sideB;
+
+public:
+	Rectangle()
+	{
+		sideA = 5;
+		sideB = 10;
+	}
+	Rectangle(int x, int y)
+	{
+		sideA = x;
+		sideB = y;
+	}
+
+	double GetPerimeter()
+	{
+		double perimeter;
+		perimeter = (2 * sideA) + (2 * sideB);
+		return perimeter;
+	}
+	double GetArea()
+	{
+		double area;
+		area = sideA * sideB;
+		return area;
+	}
+	void Info()
+	{
+		cout << "******************************************** \n";
+		cout << "Rectangle information: \n";
+		cout << "Side A is equal to: " << sideA << "\n";
+		cout << "Side B is equal to: " << sideB << "\n";
+		cout << "The colour is: blue \n";
+	}
+};
+
+void task2()
+{
+	Rectangle firstTask(3, 6);
+	cout << "Perimeter equals: " << firstTask.GetPerimeter() << "\n";
+
+	Rectangle secondTask;
+	cout << "Area equals: " << secondTask.GetArea() << "\n";
+
+	firstTask.Info();
+}
+int main()
+{
+	task2();
 }
